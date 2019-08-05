@@ -15,7 +15,8 @@ RUN  mkdir -p /app/config/ && mv /app/nginx.conf /app/config/ \
  && chown -R $user:$user /var/lib/nginx /var/cache/nginx /var/tmp/nginx
 WORKDIR /app
 
-EXPOSE 20080 20443
+# TODO: remove port 10080
+EXPOSE 10080 10443
 VOLUME ["/app/certs", "/app/config"]
 
 ENTRYPOINT ["/bin/bash", "/app/run.sh"]
